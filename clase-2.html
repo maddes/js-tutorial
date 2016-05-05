@@ -1,0 +1,90 @@
+<html>
+<head>
+	<title>Clase 2</title>
+</head>
+<body>
+
+	<p>Variables!</p>
+	
+	<hr/>
+	
+	<p>Las variables son cajas donde podés poner cosas y darles un nombre.</p>
+	<p>Por ejemplo, puedo crear una variable que se llame 'edad' y ponerle mi edad:</p>
+	
+	<pre>
+		var edad = 18
+	</pre>
+	
+	<p>Importante: el 'var' se usa para crear una nueva variable.</p>
+	<p>El código puede que ande si no lo ponés, pero es de giles, no te lo olvides.</p>
+
+	<hr/>
+
+	<p>En las variables podés poner de todo, por ejemplo:</p>
+	
+	<pre>
+		var edad = 18
+		var nombre = 'Daniel'
+		var lista = ['lechuga', 'tomate', 'queso']
+		var posta = true
+		var mentira = false
+		var auto = {
+			marca:  'Renault',
+			modelo: 'Kangoo',
+			serie:  'Sportway',
+			fabricacion: 2014,
+			color:  'gris'
+		}
+		var cuatro = 2 + 2
+		var imagen = 'http://servidor.com/ruta/a/la/imagen.png'
+		var ok = 'se entiende'
+	</pre>
+	
+	<p>Más adelante veremos que se le pueden poner cosas incluso más complicadas que lo que le pusimos al auto.</p>
+	
+	<hr/>
+	
+	<p>Genial! le pusimos cosas, ¿ahora cómo las usamos?</p>
+	<p>Bueno, podemos usarlas de varias formas, por ejemplo, para calcular cosas:</p>
+
+	<pre>
+		var plata = prompt('Cantidad de plata en tu billetera')
+		var dolares = plata/10
+		document.write('Tu plata en dólares vale: us$' + dolares)
+	</pre>
+
+	<script>
+		function codigo() {
+			var plata = prompt('Cantidad de plata en tu billetera')
+			var dolares = plata/10
+			document.getElementById('resultado').innerText = 'Tu plata en dólares vale: us$' + dolares
+		}
+	</script>
+
+	<button onclick="codigo()">Hacé click acá para ejecutar ese código acá debajo</button>
+
+	<p id="resultado"></p>
+	
+	<hr/>
+	
+	<p>Como ves, se pueden usar para guardar resultados:</p>
+	
+	<pre>
+		var plata = prompt('Cantidad de plata en tu billetera')
+	</pre>
+	
+	<p>Para hacer cálculos (dividir su valor por 10):</p>
+	
+	<pre>
+		var dolares = plata/10
+	</pre>
+	
+	<p>Para darselo de argumento a funciones que hagan algo con eso, como esta que lo muestra en pantalla:</p>
+	
+	<pre>
+		document.write('Tu plata en dólares vale: us$' + dolares)
+	</pre>
+
+	<a href="clase-1.html">Anterior</a>.
+	<a href="clase-3.html">Siguiente</a>.
+</body>

@@ -1,1 +1,28 @@
 # js-tutorial
+
+- variables
+  - como definir
+  - tipo de datos
+  - como usarlas (básico)
+  - orden de ejecución
+- operadores
+  - numericos
+  - string
+- comparadores
+  - numericos
+  - booleanos
+- control
+  - if/else
+  - for
+    - peligro: bucles infinitos
+    - anidamiento
+    - ~while~
+- arrays
+  - forEach
+  - búsqueda
+  - conteo
+- funciones
+  - como definirlas 1: declaración
+  - como definirlas 2: asignación (son un tipo de dato)
+  - orden de ejecución 1 y 2 (function hoisting)
+  - callback
