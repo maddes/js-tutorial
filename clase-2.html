@@ -17,10 +17,10 @@
 
 	<p><i>(Nadie dijo que tenga que ser cierto)</i></p>
 
-	<p><b>Importante:</b> el '<code>var</code>' se usa para crear una nueva variable.</p>
-	<p>El código puede que ande si no lo ponés, <b>pero es de giles</b>, así que no te lo olvides.</p>
-
-	<hr/>
+	<p class="peligro">
+		<b>Importante:</b> el '<code>var</code>' se usa para crear una nueva variable.</br>
+		El código puede que ande si no lo ponés, <b>pero es de giles</b>, así que no te lo olvides.
+	</p>
 
 	<p>En las variables podés poner de todo, por ejemplo:</p>
 
@@ -41,51 +41,44 @@
 		var ok = 'se entiende'
 	</pre>
 
-	<p>Más adelante veremos que se le pueden poner cosas incluso más complicadas que lo que le pusimos al auto.</p>
-
-	<hr/>
-
 	<p>Genial! le pusimos cosas, ¿ahora cómo las usamos?</p>
 	<p>Bueno, podemos usarlas de varias formas, por ejemplo, para calcular cosas:</p>
 
 	<pre>
 		var plata = prompt('Cantidad de plata en tu billetera')
 		var dolares = plata/10
-		document.write('Tu plata en dólares vale: us$' + dolares)
+		var mensaje = 'Tu plata en dólares vale: us$' + dolares
+		alert(mensaje)
 	</pre>
 
 	<script>
 		function codigo() {
 			var plata = prompt('Cantidad de plata en tu billetera')
 			var dolares = plata/10
-			document.getElementById('resultado').innerText = 'Tu plata en dólares vale: us$' + dolares
+			var mensaje = 'Tu plata en dólares vale: us$' + dolares
+			alert(mensaje)
 		}
 	</script>
 
-	<p>
-		<button onclick="codigo()">Hacé click acá para ejecutar ese código</button>
-		<span id="resultado"></span>
-	</p>
-
-
-	<hr/>
-
-	<p>Como ves, se pueden usar para guardar resultados:</p>
+	<p><button onclick="codigo()">Hacé click acá para ejecutar ese código</button></p>
+	
+	<p>Como ves, se pueden usar para guardar datos que ingrese el usuario:</p>
 
 	<pre>
 		var plata = prompt('Cantidad de plata en tu billetera')
 	</pre>
 
-	<p>Para hacer cálculos (dividir su valor por 10):</p>
+	<p>Para hacer cálculos como dividir su valor por 10, o extender una frase:</p>
 
 	<pre>
-		var dolares = plata/10
+		plata/10
+		'Tu plata en dólares vale: us$' + dolares
 	</pre>
 
-	<p>Para darselo de argumento a funciones que hagan algo con eso, como esta que lo muestra en pantalla:</p>
+	<p>Para dárselo a funciones que hagan algo con eso, como ésta que te alerta con lo que le pases:</p>
 
 	<pre>
-		document.write('Tu plata en dólares vale: us$' + dolares)
+		alert(mensaje)
 	</pre>
 
 	<a href="clase-1.html">Anterior</a>

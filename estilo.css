@@ -25,3 +25,8 @@ pre {
 	background: white;
 	padding: 1em;
 }
+.peligro {
+	border: 1px dashed red;
+	background: white;
+	padding: 1em;
+}
