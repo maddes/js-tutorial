@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300|Source+Code+Pro:400,300,700);
+html, body {
+	margin: 0;
+	font-family: Lato;
+}
+body {
+	background: #f7f7f7;
+	margin: 2em;
+}
+code {
+	font-family: 'Source Code Pro';
+	background: white;
+}
+pre {
+	font-family: 'Source Code Pro';
+	padding: 1em 0 0;
+	background: #555;
+	color: white;
+	font-size: small;
+	font-weight: 300;
+	box-shadow: inset 0 0 2em #333;
+}
+.result {
+	border: 1px dashed gray;
+	background: white;
+	padding: 1em;
+}
