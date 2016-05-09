@@ -6,11 +6,216 @@
 </head>
 <body>
 
-	<h1>Todavía no la hice :)</h1>
+	<h1>Condiciones! (y bugs)</h1>
+	
+	<p>'Programar' consiste basicamente en tomar datos, tranformarlos, y devolverlos transformados.</p>
+	<p>Por ejemplo, más adelante veremos que podemos tomar una lista y ordenarla alfabéticamente, re útil no?</p>
+	
+	<p>Ahora, no siempre tendremos certeza de que cornos el usuario nos va a dar como 'input', por lo tanto, tenemos que verificar:</p>
+	
+	<pre>
+		var sexo = prompt('Tu sexo:');
+		if (sexo == 'femenino') {
+			document.body.style.backgroundColor = 'pink'
+		}
+		else {
+			if (sexo == 'masculino') {
+				document.body.style.backgroundColor = 'lightblue'
+			}
+			else {
+				var imagen = document.createElement('img')
+				imagen.src =  'http://goo.gl/jk1Da0'
+				document.getElementById('contenedor').appendChild(imagen)
+			}
+		} 
+	</pre>
+
+	<script>
+		function codigo() {
+			var sexo = prompt('Tu sexo:');
+			if (sexo == 'femenino') {
+				document.body.style.backgroundColor = 'pink'
+			}
+			else {
+				if (sexo == 'masculino') {
+					document.body.style.backgroundColor = 'lightblue'
+				}
+				else {
+					var imagen = document.createElement('img')
+					imagen.src =  'http://goo.gl/jk1Da0'
+					document.getElementById('contenedor').appendChild(imagen)
+				}
+			} 
+		}
+	</script>
+
+	<p><button onclick="codigo()">Hacé click acá para ejecutar ese código</button></p>
+	
+	<p id="contenedor"></p>
+	
+	<p>
+		Bueno, como verás, esto no es super perfecto.<br/>
+		Podés poner <code>mujer</code>, <code>varón</code> o nada y aún así te acusan.<br/>
+		A esto se le suele llamar <code>bugs</code>, que son <b>comportamientos inesperados en el código</b>.
+	</p>
+
+	<p class="peligro">
+		Todos los programas tienen bugs. <b>Todos.</b><br/>
+		Sólo que algunos tienen muy muy pocos y ni se nota.
+	</p>
+	
+	<p>
+		Algunos bugs, son más difíciles de encontrar que otros.<br/>
+		Y algunos bugs, son más dfíciles de resolver que otros.
+	</p>
+	
+	<p><i>
+		También hay otras cosas que se les suele decir bugs, pero que en realidad no son un comportamiento inesperado sino simplemente código ineficiente.
+	</i></p>
+	
+	<p>
+		De lo que vimos en el ejemplo anterior de condiciones, podemos decir que la estructura general es:
+	</p>
+	
+	<pre>
+		if (condicion) {
+			<i>código a ejecutar
+			si la condición se cumple</i>
+		} else {
+			<i>código a ejecutar
+			si la condición NO se cumple</i>
+		}
+	</pre>
+	
+	<p>
+		Hay una versión simplificada de esto, que NO se recomienda en general, pero sirve cuando el código a ejecutar es simple (una sola sentencia)
+	</p>
+	
+	<pre>
+		if (condicion) <i>sentencia a ejecutar cuando la condicion se cumple</i>
+		else <i>sentencia a ejecutar cuando la condicion NO se comple</i>
+	</pre>
+	
+	<p>
+		Por supuesto, se pueden combinar, así:
+	</p>
+	
+	<pre>
+		if (condicion) {
+			<i>código a ejecutar
+			si la condición se cumple</i>
+		} 
+		else <i>sentencia a ejecutar cuando la condicion NO se cumple</i>
+		
+		if (condicion) <i>sentencia a ejecutar cuando la condicion se cumple</i>
+		else {
+			<i>código a ejecutar
+			si la condición NO se cumple</i>
+		}
+	</pre>
+	
+	<p>
+		Se pone complicado no?<br/>
+		Eso no es nada vieja.<br/>
+		En el ejemplo del comienzo de esta lección, existe lo que llamamos <b>anidamiento</b>.
+		Eso significa que hay un bloque de código dentro de otro bloque de código.<br/>
+		En ese caso, tenemos un segundo <code>if</code> dentro del primer <code>else</code>.<br/>
+		<i>(Viste? ya empezamos a hablar en Klingón y nos entendemos...)</i>
+	</p>
+	
+	<p><img src="http://i.imgur.com/XmmTS82.png"></p>
+	
+	<p>
+		Combinando los condicionales con y sin llaves, podemos tener muchas condiciones 'encadenadas' sin que se vea feo:
+	</p>
+	
+	<pre>
+		if (nombre == 'Daniel') {
+			IQ = 140
+		}
+		else if (nombre == 'Einstein') {
+			IQ = 120
+		}
+		else if (nombre == 'El Brian') {
+			IQ = 60
+		}
+		else {
+			IQ = 100
+		}
+	</pre>
+	
+	<p>
+		La versión 'fea' de eso mismo podría ser cualquiera de estas:<br/>
+		(Es exactamente lo mismo, pero feo)
+	</p>
+	
+	<pre>
+		if (nombre == 'Daniel') {
+			IQ = 140
+		}
+		else {
+			if (nombre == 'Einstein') {
+				IQ = 120
+			}
+			else {
+				if (nombre == 'El Brian') {
+					IQ = 60
+				}
+				else {
+					IQ = 100
+				}
+			}
+		}
+	</pre>
+	
+	<pre>
+		if (nombre == 'Daniel') IQ = 140
+		else if (nombre == 'Einstein') IQ = 120
+		else if (nombre == 'El Brian') IQ = 60
+		else IQ = 100
+	</pre>
+	
+	<p>
+		Si bien la última no se ve muy fea, cuando las condiciones y las sentencias son más complicadas, se mezcla todo y no se entiende, porque no hay suficiente espacio entre medio para distinguirlas bien.
+	</p>
+	
+	<h2>¡¡Übungsaufgaben!!</h2>
+	<i>(Ejercicios)</i>
+	
+	<p>
+		Bien, demasiada información por hoy.<br/>
+		Vamos a ejercitar tus biceps mentales.<br/>
+		Releé lo que no haya quedado claro, mandame mail si hace falta, y tratá de resolver el siguiente ejercicio:
+	</p>
+	
+	<p><b>Preguntas:</b></p>
+	
+	<ol>
+		<li>¿Qué bug encontrás en este código?</li>
+		<li>¿Cómo podrías hacerlo más eficiente/entendible?</li>
+	</ol>
+	
+	<pre>
+		if (auto == 'naftero') {
+			echarNafta()
+		} else if (auto == 'gasolero') {
+			echarGasoil()
+		} else {
+			echarNafta()
+		}
+	</pre>
+	
+	<p>
+		Porque soy una dulzura de maestro, te voy recordar algo a modo de tip:
+	</p>
+	
+	<p><img src="http://i.imgur.com/Aaf0GFW.png"></p>
 
 	<a href="clase-2.html">&laquo; Anterior</a>
 	&nbsp;&nbsp;
 	<a href="index.html">Indice</a>
+	&nbsp;&nbsp;
+	<a href="clase-4.html">Siguiente &raquo;</a>.
 
-	<p>:)</p>
+	<p>:P</p>
 </body>
