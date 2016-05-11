@@ -6,11 +6,165 @@
 </head>
 <body>
 
-	<h1>Todavía no la hice :)</h1>
+	<h1>Funciones!</h1>
+	
+	<p>
+		Si tuviésemos que ordenar toooodo el código para que se ejecute de arriba hacia abajo tooodas las veces, sería muy difícil manejar diferentes situaciones.
+	</p>
+	
+	<p>
+		Para eso tenemos las funciones, ¿que hacen? bueno… agrupan un poco de código y le dan un nombre.<br>
+		Por ejemplo:
+	</p>
+	
+	<pre>
+		var x, y, operacion
 
+		function calcular() {
+			obtenerDatos()
+			if (operacion == 'sumar') {
+				sumar()
+			} else if (operacion == 'restar') {
+				restar()
+			}
+		}
+		
+		function obtenerDatos() {
+			x = prompt('Poné un número para el primer número (si no es número va a dar error, no seas perejil)')
+			y = prompt('Poné un número para el segundo número')
+			operacion = prompt('¿Querés "sumar" o "restar"?')
+		}
+		
+		function sumar() {
+			document.getElementById('resultado').innerText = x + y
+		}
+		
+		function restar() {
+			document.getElementById('resultado').innerText = x - y
+		}
+	</pre>
+	
+	<script>
+		var x, y, operacion
+
+		function calcular() {
+			obtenerDatos()
+			if (operacion == 'sumar') {
+				sumar()
+			} else if (operacion == 'restar') {
+				restar()
+			}
+		}
+		
+		function obtenerDatos() {
+			x = prompt('Poné un número para x (si no es número va a dar error, no seas perejil)')
+			y = prompt('Poné un número para y')
+			operacion = prompt('¿Querés "sumar" o "restar"?')
+		}
+		
+		function sumar() {
+			document.getElementById('resultado').innerText = parseFloat(x) + parseFloat(y)
+		}
+		
+		function restar() {
+			document.getElementById('resultado').innerText = x - y
+		}
+	</script>
+	
+	<button onClick="calcular()">A ver que pasa che...</button>
+	
+	<p id="resultado" class="resultado"></p>
+	
+	<p>
+		Acá claramente hay mucho por analizar.<br>
+		Primero que nada... que NO FUNCIONA, jaja.
+	</p>
+	
+	<p>
+		<img src="http://i.memeful.com/media/post/oMJ28xM_700wa_0.gif">
+	</p>
+	
+	<p>
+		Bueno... la resta sí funciona.<br>
+		Tenemos un bug en la suma, por ejemplo, si sumamos 10 + 20, nos dá 1020.<br>
+	</p>
+	
+	<p>
+		<img src="http://i.memeful.com/media/post/odgOzrd_700wa_0.gif">
+	</p>
+	
+	<p>
+		Ok, me cebé con los memes...
+		Lo que pasa es que tenemos lo siguiente:
+	</p>
+	
+	<pre>
+		document.getElementById('resultado').innerText = x + y
+	</pre>
+	
+	<p>
+		O más específicamente:
+	</p>
+	
+	<pre>
+		x + y
+	</pre>
+	
+	<p>
+		En Javascript, el símbolo <code>+</code>, sirve para dos cosas:
+	</p>
+	
+	<ol>
+		<li>Sumar: 1 + 1 = 2</li>
+		<li>Concatenar: '1' + '1' = '11'
+	</ol>
+	
+	<p>
+		La hiper sutil diferencia, es que en una se procesan números, en la otra, <i>strings</i>.<br>
+		String es el nombre horrendo que se le dá al texto, viene de cuando los lenguajes se procesaban letra a letra y un texto era una 'cadena' de letras.<br>
+		Entonces tenemos, 'string' = cadena de letras = texto.<br>
+		Clarísimo.<br>
+		El tema es que las strings, con el operador <code>+</code> no se suman matemáticamente.
+		<img src="http://goo.gl/nXLd5G" title="Si nos ponemos así como re idiotas podríamos decir que las letras tienen una representación binaria que puede ser convertida a decimal y sumar el valor decimal y... sí, es cierto, y algunos lenguajes lo hacen, un horror, pero JS no, no jodas."><br>
+		(los gatos tienen información extra, dejále el mouse encima, unos 3 segundos...)<br>
+		Las string con el operador <code>+</code> se <b>concatenan</b>, es decir, se encadenan, osea se ponen una detrás de la otra, se pegan, se ... ok.
+	</p>
+	
+	<p>
+		¿Y esto que tiene que ver con que? \_(ツ)_/¯<br>
+		El bug que nos mordió acá, es que la función <code>prompt()</code> le pide al usuario un valor, de tipo TEXTO (string).<br>
+		Y por más que hayamos ingresado sólo números, fueron guardados como texto.<br>
+		Entonces al procesarlo, el <code>+</code> los 'pegó' en lugar de sumarlos... un desastre ecológico.
+		<img src="http://goo.gl/nXLd5G" title="Trivia: en PHP se usa el '.' para concatenar, y así evitar este tipo de desastres, aunque así y todo tiene otros desastres muuuucho peores..."><br>
+	</p>
+	<p>
+		Entonces hay que arreglarlo...<br>
+		El antídoto es una función re loca llamada <code>parseFloat()</code> que convierte el texto a números posta para poder sumarlos.<br>
+		Y lo arreglamos, así:
+	</p>
+	
+	<pre>
+		parseFloat(x) + parseFloat(y)
+	</pre>
+	
+	<p>
+		Pero no lo voy a hacer yo, sorry, editá <code>clase-4.html</code>, arreglalo y probalo.
+		<img src="http://goo.gl/nXLd5G" title="No seas gil, asegurate de arreglalo en el código entre los <script></script>. El código entre <pre></pre> es sólo para mostrar."><br>
+	</p>
+	
+	<p>
+		Eso es todo por hoy, en la siguiente clase seguiremos analizando este código.<br>
+	</p>
+	
 	<a href="clase-3.html">&laquo; Anterior</a>
 	&nbsp;&nbsp;
 	<a href="index.html">Indice</a>
+	&nbsp;&nbsp;
+	<a href="clase-5.html">Siguiente &raquo;</a>.
 
 	<p>:)</p>
+	
+	<p style="font-size: small">
+		Perdón la agresividad de hoy, es tarde y tengo sueño.
+	</p>
 </body>

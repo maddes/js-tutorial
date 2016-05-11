@@ -10,6 +10,9 @@ body {
 code {
 	font-family: 'Source Code Pro';
 	background: white;
+    border: 1px dashed;
+    padding: 0 .25em;
+    margin: 0 .1em;
 }
 pre {
 	font-family: 'Source Code Pro';
@@ -30,4 +33,8 @@ pre {
 	border: 1px dashed red;
 	background: white;
 	padding: 1em;
+}
+img[src="http://goo.gl/nXLd5G"] {
+	height: 24px;
+	margin-top: -8px;
 }
