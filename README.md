@@ -1,6 +1,6 @@
 # js-tutorial
 
-Para hacer este tutorial, bajáte el .zip (la opción está por ahí) y abrí el index.html en tu navegador (doble click debería andar).
+Para hacer este tutorial, bajáte el .zip (la opción está por ahí), descomprimí **todo** en alguna carpeta y abrí el index.html en tu navegador (doble click debería andar).
 
 Es medio raro, sí, que no sea online, pero la idea es que vos mismo hagas los ejercicios directamente sobre los .html y .js y pruebes sobre lo que se muestra.
 (no te preocupes, si metés la pata muy feo podés volver a bajar el .zip, ja)
